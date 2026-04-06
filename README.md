@@ -2,9 +2,9 @@
 
 **Stop running `npm audit`, `composer audit`, `pip audit` manually.** See everything in one visual dashboard, across all your projects, automatically.
 
-![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/benjdiasaad.dep-health-dashboard)
-![Downloads](https://img.shields.io/visual-studio-marketplace/d/benjdiasaad.dep-health-dashboard)
-![Rating](https://img.shields.io/visual-studio-marketplace/r/benjdiasaad.dep-health-dashboard)
+[![VS Code Marketplace](https://vsmarketplacebadges.dev/version-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
+[![Downloads](https://vsmarketplacebadges.dev/downloads-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
+[![Rating](https://vsmarketplacebadges.dev/rating-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
 
 ## What It Does
 
