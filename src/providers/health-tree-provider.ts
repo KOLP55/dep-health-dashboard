@@ -1,20 +1,6 @@
 import * as vscode from 'vscode';
 import { DependencyInfo, Ecosystem, HealthStatus, HealthSummary, ScanResult } from '../types';
 
-/**
- * TreeDataProvider for the sidebar dependency health view.
- * Groups dependencies by ecosystem first, then by health status within each ecosystem.
- *
- * Structure:
- *   ▶ NPM (package.json) — 120 packages
- *       ⚠ 80 Outdated
- *           lodash 4.17.19 → 4.17.21
- *       ✅ 40 Healthy
- *           express 4.18.2
- *   ▶ Composer (composer.json) — 45 packages
- *       ⚠ 30 Outdated
- *       ✅ 15 Healthy
- */
 export class HealthTreeProvider implements vscode.TreeDataProvider<DepTreeItem> {
   private _onDidChangeTreeData = new vscode.EventEmitter<DepTreeItem | undefined>();
   readonly onDidChangeTreeData = this._onDidChangeTreeData.event;
