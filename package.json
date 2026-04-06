@@ -1,0 +1,175 @@
+{
+  "name": "dep-health-dashboard",
+  "displayName": "Dependency Health Dashboard",
+  "description": "Real-time health monitoring for your project dependencies — outdated packages, security vulnerabilities, abandoned libraries, and bundle size insights across 10+ ecosystems.",
+  "version": "0.3.2",
+  "publisher": "benjdiasaad",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Linters",
+    "Visualization"
+  ],
+  "keywords": [
+    "dependency",
+    "security",
+    "vulnerability",
+    "npm",
+    "pip",
+    "composer",
+    "maven",
+    "gradle",
+    "cargo",
+    "go modules",
+    "nuget",
+    "health check",
+    "outdated",
+    "audit",
+    "laravel",
+    "spring",
+    "react",
+    "packages"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/package.json",
+    "workspaceContains:**/requirements.txt",
+    "workspaceContains:**/pyproject.toml",
+    "workspaceContains:**/Pipfile",
+    "workspaceContains:**/composer.json",
+    "workspaceContains:**/pom.xml",
+    "workspaceContains:**/build.gradle",
+    "workspaceContains:**/build.gradle.kts",
+    "workspaceContains:**/Cargo.toml",
+    "workspaceContains:**/go.mod",
+    "workspaceContains:**/*.csproj",
+    "workspaceContains:**/Gemfile",
+    "workspaceContains:**/pubspec.yaml",
+    "workspaceContains:**/Package.swift"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dep-health",
+          "title": "Dependency Health",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "dep-health": [
+        {
+          "id": "depHealthOverview",
+          "name": "Overview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "depHealth.scan",
+        "title": "Scan Dependencies",
+        "category": "Dep Health",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "depHealth.updatePackage",
+        "title": "Update Package",
+        "category": "Dep Health"
+      },
+      {
+        "command": "depHealth.updateAll",
+        "title": "Update All Packages",
+        "category": "Dep Health"
+      },
+      {
+        "command": "depHealth.showReport",
+        "title": "Show Full Health Report",
+        "category": "Dep Health"
+      },
+      {
+        "command": "depHealth.ignorePackage",
+        "title": "Ignore Package",
+        "category": "Dep Health"
+      }
+    ],
+    "configuration": {
+      "title": "Dependency Health Dashboard",
+      "properties": {
+        "depHealth.autoScanOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan dependencies when a project is opened"
+        },
+        "depHealth.scanInterval": {
+          "type": "number",
+          "default": 3600,
+          "description": "Auto-scan interval in seconds (0 to disable)"
+        },
+        "depHealth.ignoredPackages": {
+          "type": "array",
+          "default": [],
+          "description": "List of package names to ignore in scans"
+        },
+        "depHealth.enabledEcosystems": {
+          "type": "array",
+          "default": ["npm", "pip", "composer", "maven", "gradle", "cargo", "gomod", "nuget", "rubygems", "pub"],
+          "description": "Which package ecosystems to scan"
+        },
+        "depHealth.abandonedThresholdDays": {
+          "type": "number",
+          "default": 730,
+          "description": "Days since last publish to consider a package possibly abandoned"
+        },
+        "depHealth.showStatusBarSummary": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a summary in the VS Code status bar"
+        }
+      }
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "depHealth.scan",
+          "when": "view == depHealthOverview",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {
+    "semver": "^7.5.4",
+    "fast-xml-parser": "^4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/dep-health-dashboard"
+  },
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0D1117",
+    "theme": "dark"
+  },
+  "license": "MIT"
+}
